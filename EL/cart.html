@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车 - 电子产品商城</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="brand-logo">ElectroShop</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="cart.html" class="active">购物车</a></li>
+                <li><a href="order.html">订单</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 style="margin-top:20px;">我的购物车</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>商品</th>
+                        <th>价格</th>
+                        <th>数量</th>
+                        <th>小计</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="cartBody">
+                    <tr>
+                        <td>旗舰手机 X1</td>
+                        <td>¥3999</td>
+                        <td>1</td>
+                        <td>¥3999</td>
+                        <td><button class="action-btn">删除</button></td>
+                    </tr>
+                    <tr>
+                        <td>真无线耳机 Air</td>
+                        <td>¥499</td>
+                        <td>2</td>
+                        <td>¥998</td>
+                        <td><button class="action-btn">删除</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="text-align:right; margin:20px 0;">
+            <strong id="cartTotal">合计：¥0</strong>
+            <button class="action-btn" style="margin-left:20px;">去结算</button>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">© 2026 ElectroShop. 保留所有权利。</div>
+    </footer>
+</body>
+</html>

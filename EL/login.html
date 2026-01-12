@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>用户登录 - ElectroShop</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="brand-logo">ElectroShop</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="cart.html">购物车</a></li>
+                <li><a href="order.html">订单</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <h2>用户登录</h2>
+            <form id="loginForm" action="#" method="post">
+                <div class="form-group">
+                    <label for="identifier">邮箱或手机号</label>
+                    <input type="text" id="identifier" name="identifier" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
+                <button type="submit" class="action-btn">登录</button>
+            </form>
+            <p class="form-tip">还没有账号？<a href="register.html">立即注册</a></p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">© 2026 ElectroShop. 保留所有权利。</div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

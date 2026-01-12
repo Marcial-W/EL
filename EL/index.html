@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子产品商城 - 首页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="brand-logo">ElectroShop</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#categories">分类</a></li>
+                <li><a href="cart.html">购物车</a></li>
+                <li><a href="order.html">订单</a></li>
+                <li id="loginLink"><a href="login.html">登录/注册</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 分类栏 -->
+        <section id="categories" class="category-list">
+            <h2>商品分类</h2>
+            <ul>
+                <li><a href="#" data-cat="手机">手机</a></li>
+                <li><a href="#" data-cat="平板">平板</a></li>
+                <li><a href="#" data-cat="笔记本">笔记本</a></li>
+                <li><a href="#" data-cat="智能穿戴">智能穿戴</a></li>
+                <li><a href="#" data-cat="智能家居">智能家居</a></li>
+                <li><a href="#" data-cat="配件">配件</a></li>
+            </ul>
+        </section>
+
+        <!-- 推荐商品 -->
+        <section class="product-grid" id="productGrid">
+            <!-- 商品卡片通过 JS 渲染 -->
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">© 2026 ElectroShop. 保留所有权利。</div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
