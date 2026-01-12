@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单中心 - 电子产品商城</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="brand-logo">ElectroShop</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="cart.html">购物车</a></li>
+                <li><a href="order.html" class="active">订单</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <h2 style="margin-top:20px;">我的订单</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>订单号</th>
+                            <th>下单时间</th>
+                            <th>金额</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>202601120001</td>
+                            <td>2026-01-12 10:00</td>
+                            <td>¥3999</td>
+                            <td>待发货</td>
+                            <td><button class="action-btn">查看</button></td>
+                        </tr>
+                        <tr>
+                            <td>202601110123</td>
+                            <td>2026-01-11 16:30</td>
+                            <td>¥998</td>
+                            <td>已完成</td>
+                            <td><button class="action-btn">评价</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">© 2026 ElectroShop. 保留所有权利。</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子产品商城 - 首页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="brand-logo">ElectroShop</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#categories">分类</a></li>
+                <li><a href="cart.html">购物车</a></li>
+                <li><a href="order.html">订单</a></li>
+                <li id="loginLink"><a href="login.html">登录/注册</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <section class="hero">
+                <div class="hero__text">
+                    <p class="eyebrow">新年科技精选</p>
+                    <h1>为日常找到一件好用的电子产品</h1>
+                    <p class="sub">覆盖手机、平板、智能穿戴、家居与配件，一键加入购物车。</p>
+                    <div class="hero__actions">
+                        <a class="btn-primary" href="#products">立即选购</a>
+                        <a class="btn-ghost" href="#categories">查看分类</a>
+                    </div>
+                </div>
+                <div class="hero__card">
+                    <div class="hero__badge">热卖 · 24h发货</div>
+                    <div class="hero__stats">
+                        <div><strong>1,280+</strong><span>好评晒单</span></div>
+                        <div><strong>48h</strong><span>售后响应</span></div>
+                        <div><strong>7天</strong><span>无理由退换</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 分类栏 -->
+            <section id="categories" class="category-list">
+                <div class="section-header">
+                    <div>
+                        <p class="eyebrow">Category</p>
+                        <h2>商品分类</h2>
+                    </div>
+                    <p class="hint">点击标签快速筛选，支持查看全部</p>
+                </div>
+                <ul class="pill-row">
+                    <li><a href="#" class="pill active" data-cat="all">全部</a></li>
+                    <li><a href="#" class="pill" data-cat="手机">手机</a></li>
+                    <li><a href="#" class="pill" data-cat="平板">平板</a></li>
+                    <li><a href="#" class="pill" data-cat="笔记本">笔记本</a></li>
+                    <li><a href="#" class="pill" data-cat="智能穿戴">智能穿戴</a></li>
+                    <li><a href="#" class="pill" data-cat="智能家居">智能家居</a></li>
+                    <li><a href="#" class="pill" data-cat="配件">配件</a></li>
+                </ul>
+            </section>
+
+            <!-- 推荐商品 -->
+            <section id="products">
+                <div class="section-header">
+                    <div>
+                        <p class="eyebrow">Featured</p>
+                        <h2>精选商品</h2>
+                    </div>
+                    <p class="hint">严选 4 款高分好评，点击卡片查看详情</p>
+                </div>
+                <div class="product-grid" id="productGrid">
+                    <!-- 商品卡片通过 JS 渲染 -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">© 2026 ElectroShop. 保留所有权利。</div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
