@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "B9l82vMzr9ohEMPTm/1EhMz2J0LnYmjMRGKyPQfkwSA=",
+  "Hash": "uF3kDq7Vc62eE4SzV0JHXuw+FSWka5The9/2LwbIzoc=",
   "Source": "EL.Api",
   "BasePath": "_content/EL.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "EL.Api\\wwwroot",
+      "Source": "EL.Api",
+      "ContentRoot": "E:\\电子商务应用开发\\系统实现\\EL.Api\\wwwroot\\",
+      "BasePath": "_content/EL.Api",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
