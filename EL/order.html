@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>订单中心 - 电子产品商城</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
     <!-- 导航栏 -->
     <header class="nav-bar">
         <div class="container">
             <a href="index.html" class="brand-logo">ElectroShop</a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="cart.html">购物车</a></li>
                 <li><a href="order.html" class="active">订单</a></li>
+                <li id="loginLink"><a href="login.html">登录/注册</a></li>
             </ul>
         </div>
     </header>
@@ -34,21 +35,8 @@
                             <th>操作</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>202601120001</td>
-                            <td>2026-01-12 10:00</td>
-                            <td>¥3999</td>
-                            <td>待发货</td>
-                            <td><button class="action-btn">查看</button></td>
-                        </tr>
-                        <tr>
-                            <td>202601110123</td>
-                            <td>2026-01-11 16:30</td>
-                            <td>¥998</td>
-                            <td>已完成</td>
-                            <td><button class="action-btn">评价</button></td>
-                        </tr>
+                    <tbody id="orderBody">
+                        <!-- 订单数据通过 JS 动态加载 -->
                     </tbody>
                 </table>
             </div>
@@ -59,5 +47,6 @@
     <footer class="footer">
         <div class="container">© 2026 ElectroShop. 保留所有权利。</div>
     </footer>
+    <script src="scripts.js?v=2"></script>
 </body>
 </html>

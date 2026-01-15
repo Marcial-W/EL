@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品详情 - 电子产品商城</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
     <!-- 导航栏 -->
     <header class="nav-bar">
         <div class="container">
             <a href="index.html" class="brand-logo">ElectroShop</a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="#categories">分类</a></li>
                 <li><a href="cart.html">购物车</a></li>
                 <li><a href="order.html">订单</a></li>
+                <li id="loginLink"><a href="login.html">登录/注册</a></li>
             </ul>
         </div>
     </header>
@@ -52,5 +53,47 @@
     <footer class="footer">
         <div class="container">© 2026 ElectroShop. 保留所有权利。</div>
     </footer>
+    <script src="scripts.js"></script>
+    <script>
+        // 加载商品详情
+        document.addEventListener('DOMContentLoaded', function() {
+            // 渲染导航栏
+            renderNav();
+            
+            // 从 URL 获取商品 ID
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id')) || 101;
+            
+            // 从 scripts.js 中的 demoProducts 数组查找商品
+            const product = demoProducts.find(p => p.id === productId);
+            
+            if (product) {
+                // 更新图片
+                const img = document.querySelector('.product-detail img');
+                if (img) {
+                    img.src = product.img;
+                    img.alt = product.name;
+                }
+                
+                // 更新商品信息
+                const h1 = document.querySelector('.detail-info h1');
+                if (h1) h1.textContent = product.name;
+                
+                const price = document.querySelector('.detail-info .price');
+                if (price) price.textContent = `¥${product.price}`;
+                
+                // 更新按钮的 data-id
+                const addCartBtn = document.getElementById('addCartBtn');
+                if (addCartBtn) {
+                    addCartBtn.setAttribute('data-id', product.id);
+                    // 绑定加入购物车事件
+                    addCartBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        addToCart(product.id, 1);
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>

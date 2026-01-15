@@ -22,6 +22,16 @@ namespace EcommerceApp.DAL
             cmd.Parameters.AddWithValue("@r",role);
             return (long)(cmd.ExecuteScalar()??0);
         }
+        public bool UserExists(string identifier){
+            const string sql="SELECT 1 FROM Users WHERE Email=@id OR Phone=@id LIMIT 1";
+            using var con=new SqliteConnection(_conn);
+            con.Open();
+            using var cmd=con.CreateCommand();
+            cmd.CommandText=sql;
+            cmd.Parameters.AddWithValue("@id",identifier);
+            using var rd=cmd.ExecuteReader();
+            return rd.Read();
+        }
         public UserDto? ValidateLogin(string id,string pwdHash){
             const string sql="SELECT UserId,Email,Phone,NickName,Role,CreatedAt FROM Users WHERE (Email=@id OR Phone=@id) AND PasswordHash=@h LIMIT 1";
             using var con=new SqliteConnection(_conn);

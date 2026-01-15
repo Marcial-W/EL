@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>用户注册 - ElectroShop</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
     <header class="nav-bar">
@@ -24,7 +24,11 @@
         <div class="container">
             <div class="form-container">
                 <h2>用户注册</h2>
-                <form id="registerForm" action="#" method="post">
+                <form id="registerForm" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="userName">用户名</label>
+                        <input type="text" id="userName" name="userName" required />
+                    </div>
                     <div class="form-group">
                         <label for="email">邮箱</label>
                         <input type="email" id="email" name="email" required />
@@ -53,5 +57,55 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+        // 备用注册表单处理（确保即使外部脚本加载失败也能工作）
+        (function() {
+            const registerForm = document.getElementById("registerForm");
+            if (registerForm) {
+                registerForm.addEventListener("submit", async function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const userName = document.getElementById("userName").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const phone = document.getElementById("phone").value.trim();
+                    const password = document.getElementById("passwordR").value;
+                    const confirmPwd = document.getElementById("confirmPwd").value;
+                    
+                    if (!userName || !email || !password) {
+                        alert("用户名、邮箱和密码不能为空");
+                        return false;
+                    }
+                    
+                    if (password !== confirmPwd) {
+                        alert("两次输入的密码不一致");
+                        return false;
+                    }
+                    
+                    try {
+                        const API_BASE = "http://localhost:5000/api";
+                        const response = await fetch(`${API_BASE}/auth/register`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ email, phone: phone || null, password, nickName: userName })
+                        });
+                        
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            throw new Error(errorText || "注册失败");
+                        }
+                        
+                        const result = await response.json();
+                        alert("注册成功！请登录");
+                        window.location.href = "login.html";
+                        return false;
+                    } catch (err) {
+                        alert("注册失败：" + err.message);
+                        return false;
+                    }
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

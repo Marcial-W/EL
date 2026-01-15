@@ -5,24 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>购物车 - 电子产品商城</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
     <!-- 导航栏 -->
     <header class="nav-bar">
         <div class="container">
             <a href="index.html" class="brand-logo">ElectroShop</a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="cart.html" class="active">购物车</a></li>
                 <li><a href="order.html">订单</a></li>
+                <li id="loginLink"><a href="login.html">登录/注册</a></li>
             </ul>
         </div>
     </header>
 
     <main class="page">
         <div class="container">
-            <h2 style="margin-top:20px;">我的购物车</h2>
+            <div class="section-header" style="margin-top:20px;">
+                <div>
+                    <p class="eyebrow">Shopping Cart</p>
+                    <h2>我的购物车</h2>
+                </div>
+            </div>
             <div class="table-wrapper">
                 <table>
                     <thead>
@@ -35,26 +41,15 @@
                         </tr>
                     </thead>
                     <tbody id="cartBody">
-                        <tr>
-                            <td>旗舰手机 X1</td>
-                            <td>¥3999</td>
-                            <td>1</td>
-                            <td>¥3999</td>
-                            <td><button class="action-btn">删除</button></td>
-                        </tr>
-                        <tr>
-                            <td>真无线耳机 Air</td>
-                            <td>¥499</td>
-                            <td>2</td>
-                            <td>¥998</td>
-                            <td><button class="action-btn">删除</button></td>
-                        </tr>
+                        <!-- 购物车内容由 JavaScript 动态加载 -->
                     </tbody>
                 </table>
             </div>
-            <div style="text-align:right; margin:20px 0;">
-                <strong id="cartTotal">合计：¥0</strong>
-                <button class="action-btn" style="margin-left:20px;">去结算</button>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <strong id="cartTotal">合计：¥0.00</strong>
+                </div>
+                <button class="btn-primary" data-action="checkout">去结算</button>
             </div>
         </div>
     </main>
@@ -63,6 +58,6 @@
     <footer class="footer">
         <div class="container">© 2026 ElectroShop. 保留所有权利。</div>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="scripts.js?v=3"></script>
 </body>
 </html>
