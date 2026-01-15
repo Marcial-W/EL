@@ -13,6 +13,7 @@
     <Compile Include="..\EL\Dtos.cs" Link="DAL\Dtos.cs" />
     <Compile Include="..\EL\UserDalSqlite.cs" Link="DAL\UserDalSqlite.cs" />
     <Compile Include="..\EL\CartDalSqlite.cs" Link="DAL\CartDalSqlite.cs" />
+    <Compile Include="..\EL\OrderDalSqlite.cs" Link="DAL\OrderDalSqlite.cs" />
     <Compile Include="..\EL\SqliteInitializer.cs" Link="DAL\SqliteInitializer.cs" />
   </ItemGroup>
 </Project>
